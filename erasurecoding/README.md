@@ -13,6 +13,6 @@ Each `package_N` file includes original data of size $N$ bytes and the correspon
 - Each `segment_ec` contains 1026 shards, and each shard contains $M$ byte pairs.
 - Due to the nature of RS coding (BCH), the first 342 shards will be exactly the same as the original data with some byte-wise rearranging (see **Indexing**), while the remaining 684 shards are RS recovery shards.
 
-**Indexing:** The $i$th RS codeword of the $j$th segment is stored in the $j$th byte pair of the $i$th shard. 
+**Indexing:** The $i$ th RS codeword of the $j$ th segment is stored in the $j$ th byte pair of the $i$ th shard. 
 
 The term "byte pair" is used because Reed-Solomon coding is based on Galois Field $GF(2^{16})$, where each point in the field is 2 bytes long, making it the smallest unit of the RS codeword in this context.
