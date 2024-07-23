@@ -1,9 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Erasure Coding Test Vector",
+  "description": "Test vectors with 10 different lengths of original data. The data lengths are: 1, 32, 684, 4096, 4014, 15000, 21824, 21888, 100000, and 200000 bytes.",
   "type": "object",
   "properties": {
     "data": {
       "type": "string",
+      "description": "Hexadecimal representation of data",
       "pattern": "^[a-f0-9]+$"
     },
     "segment": {
@@ -11,11 +14,13 @@
       "properties": {
         "segments": {
           "type": "array",
+          "description": "Array of segment objects",
           "items": {
             "type": "object",
             "properties": {
               "segment_ec": {
                 "type": "array",
+                "description": "Array of erasure-coded segment data",
                 "items": {
                   "type": "string",
                   "pattern": "^[a-f0-9]+$"
